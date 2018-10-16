@@ -19,7 +19,7 @@ namespace Grades
             grades.Add(grade);
         }
 
-        List<float> grades = new List<float>();
+        List<float> grades;
 
     }
 }
