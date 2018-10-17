@@ -11,6 +11,24 @@ namespace Grades.Tests.Types
     public class TypeTests
     {
         [TestMethod]
+        public void UpperCaseString()
+        {
+            string name = "Scott";
+            //name.ToUpper();
+            name = name.ToUpper();
+            Assert.AreEqual("SCOTT", name);
+        }
+
+        [TestMethod]
+        public void AddDaysToDateTime()
+        {
+            DateTime date = new DateTime(2015, 1, 1);
+            //date.AddDays(1);
+            date = date.AddDays(1);
+            Assert.AreEqual(2, date.Day);
+        }
+
+        [TestMethod]
         public void ValueTypePassByValue()
         {
             int x = 46;
