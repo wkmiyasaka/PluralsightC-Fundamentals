@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Grades
 {
-    class GradeBook
+    public class GradeBook
     {
-
         public GradeBook()
         {
             grades = new List<float>();
@@ -18,30 +17,17 @@ namespace Grades
         {
             GradeStatistics stats = new GradeStatistics();
             
-
             float sum = 0;
             if (grades.Count > 0)
             {
                 foreach (float grade in grades)
                 {
-                    /*
-                    if (grade > stats.HighestGrade)
-                    {
-                        stats.HighestGrade = grade;
-                    }
-
-                    if (grade < stats.LowestGrade)
-                    {
-                        stats.LowestGrade = grade;
-                    }
-                     */
                     stats.HighestGrade = Math.Max(grade, stats.HighestGrade);
                     stats.LowestGrade = Math.Min(grade, stats.LowestGrade);
                     sum += grade;
                 }
                 stats.AverageGrade = sum / grades.Count;
             }
-            
             return stats;
         }
 
@@ -49,6 +35,8 @@ namespace Grades
         {
             grades.Add(grade);
         }
+
+        public string Name;
 
         private List<float> grades;
 
