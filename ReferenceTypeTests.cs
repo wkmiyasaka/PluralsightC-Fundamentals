@@ -11,6 +11,17 @@ namespace Grades.Tests.Types
     public class ReferenceTypeTests
     {
         [TestMethod]
+        public void StringComparisons()
+        {
+            string name1 = "Scott";
+            string name2 = "scott";
+
+            bool result = String.Equals(name1, name2, StringComparison.InvariantCultureIgnoreCase);
+            Assert.IsTrue(result);
+        }
+
+
+        [TestMethod]
         public void IntVariablesHoldAValue()
         {
             int x1 = 100;
@@ -18,7 +29,7 @@ namespace Grades.Tests.Types
 
             x1 = 200;
 
-            Assert.AreEqual(x1, x2);
+            Assert.AreNotEqual(x1, x2);
         }
 
         [TestMethod]
@@ -29,6 +40,8 @@ namespace Grades.Tests.Types
 
             g1.Name = "Scott's grade book";
 
+            //g1.Name = "New book!";
+            //g1 = new GradeBook();
             Console.WriteLine(g2.Name);
             Assert.AreEqual(g1.Name, g2.Name);
         }
